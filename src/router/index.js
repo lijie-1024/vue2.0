@@ -5,6 +5,8 @@ import Member from '@/components/tabbar/member'
 import Shopcar from '@/components/tabbar/shopcar'
 import Search from '@/components/tabbar/search'
 import NewsList from '@/components/news/newslist.vue'
+import NewsInfo from '@/components/news/newsinfo.vue'
+import PhotoList from '@/components/photo/photolist.vue'
 
 
 
@@ -39,6 +41,14 @@ export default new Router({
     {
       path: '/newslist',
       component: NewsList
+    },
+    {
+      path: '/newsinfo/:id',
+      component: NewsInfo
+    },
+    {
+      path: '/photolist',
+      component: PhotoList
     },
 
   ],

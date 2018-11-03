@@ -43,6 +43,8 @@ export default {
 <style scoped lang="scss">
 #app{
 		overflow: hidden;
+		padding-bottom: 50px;
+
 }
 .app-container {
     padding-top: 40px;
