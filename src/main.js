@@ -8,7 +8,8 @@ Vue.use(MintUI)
 // 导入mui
 import '../lib/mui/css/mui.min.css'
 import '../lib/mui/css/icons-extra.css'
-// 导入axios
+
+// 导入axios--已经封装单独api了，所以隐藏
 // import axios from 'axios'
 // 把 axios 挂载 到 Vue 上b
 // axios.defaults.baseURL='http://www.lovegf.cn:8899'
