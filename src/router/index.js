@@ -7,6 +7,11 @@ import Search from '@/components/tabbar/search'
 import NewsList from '@/components/news/newslist.vue'
 import NewsInfo from '@/components/news/newsinfo.vue'
 import PhotoList from '@/components/photo/photolist.vue'
+import PhotoInfo from '@/components/photo/photoinfo.vue'
+import GoodsList from '@/components/goods/goodslist.vue'
+import GoodsInfo from '@/components/goods/goodsinfo.vue'
+import GoodsDesc from '@/components/goods/goodsdesc.vue'
+import GoodsComment from '@/components/goods/goodscomment.vue'
 
 
 
@@ -49,6 +54,29 @@ export default new Router({
     {
       path: '/photolist',
       component: PhotoList
+    },
+    {
+      path: '/photoinfo/:id',
+      component: PhotoInfo
+    },
+    {
+      path: '/goodslist',
+      component: GoodsList
+    },
+    {
+      path: '/goodsinfo/:id',
+      name:'GoodsInfo',
+      component: GoodsInfo
+    },
+    {
+      path: '/goodsdesc/:id',
+      name:'goodsdesc',
+      component: GoodsDesc
+    },
+    {
+      path: '/goodscomment/:id',
+      name:'goodscomment',
+      component: GoodsComment
     },
 
   ],

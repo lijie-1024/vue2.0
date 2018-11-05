@@ -1,14 +1,14 @@
 # my-app
 
-> Vue.js web-app项目
+> Vue.js web-app 项目
 
-## webpack项目基本环境搭建
+## webpack 项目基本环境搭建
 
 ```JavaScript
 .
 ├── .babelrc                // babel配置文件
 ├── .gitignore              // git忽略文件
-├── LICENSE                 // 版权  
+├── LICENSE                 // 版权
 ├── README.md               // 文档
 ├── dist                    // 输出目录
 ├── package.json            // npm配置文件
@@ -18,17 +18,16 @@
 └── webpack.config.js       // webpack配置文件
 ```
 
-## 集成Vue
+## 集成 Vue
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
-
 ```
 
 2. `main.js`中集成`Vue`
@@ -44,7 +43,8 @@ new Vue({
     render: c => c(app)
 })
 ```
-## 制作项目首页Header和Tabbar
+
+## 制作项目首页 Header 和 Tabbar
 
 1. 导入并注册`mint-ui`中的`header`组件
 
@@ -71,7 +71,7 @@ Vue.omponent(Header.name, Header)
 <style scoped>
 .app-container{
     padding-top: 40px;
-}            
+}
 </style>
 ```
 
@@ -84,18 +84,18 @@ import './lib/mui/css/mui.min.css'
 
 5. 在`App.vue`中加入`MUI`的`tabbar`结构代码
 
-## 完成底部Tabbar购物车小图标替换
+## 完成底部 Tabbar 购物车小图标替换
 
-1. mui的css文件夹中引入icon-extra.css文件并在main.js中导入
+1. mui 的 css 文件夹中引入 icon-extra.css 文件并在 main.js 中导入
 
 ```JavaScript
 // 导入mui字体图标样式
 import './lib/mui/css/icons-extra.css'
 ```
 
-2. mui的fonts文件夹中引入mui-icon-extra.tff文件
+2. mui 的 fonts 文件夹中引入 mui-icon-extra.tff 文件
 
-3. 购物车模块span标签上添加样式类
+3. 购物车模块 span 标签上添加样式类
 
 ```HTML
 <a class="mui-tab-item" to="/shopcar">
@@ -106,7 +106,7 @@ import './lib/mui/css/icons-extra.css'
 </a>
 ```
 
-## 集成路由vue-router并实现tabbar点击高亮切换
+## 集成路由 vue-router 并实现 tabbar 点击高亮切换
 
 1. 在`src`目录创建`router`文件夹,并创建`router.js`,导出`router`实例
 
@@ -138,9 +138,9 @@ new Vue({
 })
 ```
 
-3. 将`App.vue`中`tabbar`的a标签修改为`<router-link>`
+3. 将`App.vue`中`tabbar`的 a 标签修改为`<router-link>`
 
-4. 在router.js中vue-router实例内添加linkActiveClass属性,指定高亮类名
+4. 在 router.js 中 vue-router 实例内添加 linkActiveClass 属性,指定高亮类名
 
 ```JavaScript
 var router = new VueRouter({
@@ -150,11 +150,11 @@ var router = new VueRouter({
 })
 ```
 
-## 实现Tabbar路由切换
+## 实现 Tabbar 路由切换
 
-1. 在src目录下创建components/tabbar文件夹,再创建tabbar对应的4个vue组件
+1. 在 src 目录下创建 components/tabbar 文件夹,再创建 tabbar 对应的 4 个 vue 组件
 
-2. 在router.js中导入四个组件并定义路由规则
+2. 在 router.js 中导入四个组件并定义路由规则
 
 ```JavaScript
 var router = new VueRouter({
@@ -168,7 +168,7 @@ var router = new VueRouter({
 })
 ```
 
-3. 在App.vue中修改`router-link`标签上的to属性为路由规则中的path路径
+3. 在 App.vue 中修改`router-link`标签上的 to 属性为路由规则中的 path 路径
 
 ```HTML
 <router-link class="mui-tab-item " to="/home">
@@ -177,7 +177,7 @@ var router = new VueRouter({
 </router-link>
 ```
 
-4. 在App.vue的Heade区域下面添加路由占位标签`<router-view></router-view>`
+4. 在 App.vue 的 Heade 区域下面添加路由占位标签`<router-view></router-view>`
 
 ```HTML
 <!-- 2. router-view占位 -->
@@ -186,7 +186,7 @@ var router = new VueRouter({
 
 ## 完成首页轮播图样式布局
 
-1. main.js中导入并注册mint-ui的`Swipe, SwipeItem`组件
+1. main.js 中导入并注册 mint-ui 的`Swipe, SwipeItem`组件
 
 ```JavaScript
 import { Swipe, SwipeItem } from 'mint-ui'
@@ -204,7 +204,7 @@ Vue.component(SwipeItem.name, SwipeItem)
 </mt-swipe>
 ```
 
-3. 在组件的style中书写样式
+3. 在组件的 style 中书写样式
 
 ```SCSS
 .mint-swipe {
@@ -223,15 +223,15 @@ Vue.component(SwipeItem.name, SwipeItem)
 }
 ```
 
-## 集成axios实现轮播图数据请求
+## 集成 axios 实现轮播图数据请求
 
-1. 安装axios
+1. 安装 axios
 
 ```JavaScript
 npm i axios --save
 ```
 
-2. 在main.js中集成`axios`
+2. 在 main.js 中集成`axios`
 
 ```JavaScript
 // 2. 集成VueResource
@@ -269,7 +269,7 @@ export default {
 };
 ```
 
-4. 使用v-for指令循环渲染`mt-swipe-item`
+4. 使用 v-for 指令循环渲染`mt-swipe-item`
 
 ```HTML
 <mt-swipe :auto="4000">
@@ -279,7 +279,7 @@ export default {
 </mt-swipe>
 ```
 
-5. 给img添加样式
+5. 给 img 添加样式
 
 ```CSS
 img{
@@ -290,7 +290,7 @@ img{
 
 ## 完成首页九宫格布局
 
-1. 使用MUI九宫格布局结构
+1. 使用 MUI 九宫格布局结构
 
 ```HTML
 <!-- 2. 9宫格图标 -->
@@ -314,7 +314,7 @@ img{
     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
             <img src="../../images/menu6.png" alt="">
             <div class="mui-media-body">联系我们</div></a></li>
-</ul> 
+</ul>
 ```
 
 2. 设置样式
@@ -347,13 +347,13 @@ img{
 </transition>
 ```
 
-2. 使用vue提供的过渡类控制进入离开动画样式
+2. 使用 vue 提供的过渡类控制进入离开动画样式
 
 ```CSS
 .app-container{
   padding-top: 40px;
 	overflow-x: hidden; /*隐藏超出屏幕部分*/
-}         
+}
 .v-enter {
   opacity: 0;
   transform: translateX(100%); /*进入起点在屏幕100%部分,即屏幕最右*/
@@ -366,12 +366,12 @@ img{
 .v-enter-active,
 .v-leave-active {
   transition: all 0.5s ease;
-}   
+}
 ```
 
 ## 实现新闻资讯路由跳转
 
-1. 在components/news文件夹下面创建`NewsList.vue`组件
+1. 在 components/news 文件夹下面创建`NewsList.vue`组件
 
 2. 在`router.js`导入`NewsList.vue`组件中并添加路由规则
 
@@ -381,7 +381,7 @@ import NewsList from '../components/news/NewsList.vue'
 { path: '/home/newslist', component: NewsList }
 ```
 
-3. 在`HomeContainer.vue`组件中修改**新闻资讯**图标的a标签为`router-link`并设置to属性为路由规则中的path属性值
+3. 在`HomeContainer.vue`组件中修改**新闻资讯**图标的 a 标签为`router-link`并设置 to 属性为路由规则中的 path 属性值
 
 ```HTML
 <router-link to="/home/newslist">
@@ -392,7 +392,7 @@ import NewsList from '../components/news/NewsList.vue'
 
 ## 实现新闻资讯界面布局和样式
 
-1. 使用MUI中的`media-list.html`图文列表 - 缩略图居左
+1. 使用 MUI 中的`media-list.html`图文列表 - 缩略图居左
 
 ```HTML
 <ul class="mui-table-view">
@@ -431,7 +431,7 @@ import NewsList from '../components/news/NewsList.vue'
 
 ## 实现新闻资讯列表数据动态化
 
-1. 在main.js中配置vue-resource请求根域名
+1. 在 main.js 中配置 vue-resource 请求根域名
 
 ```JavaScript
 // 2.3 全局配置请求的URL根域名
@@ -467,7 +467,7 @@ export default {
 }
 ```
 
-3. 使用v-for循环渲染图文列表,并绑定数据
+3. 使用 v-for 循环渲染图文列表,并绑定数据
 
 ```HTML
 <li class="mui-table-view-cell mui-media" v-for="(item,index) in newslist" :key="index">
@@ -486,13 +486,13 @@ export default {
 
 ## 实现新闻列表时间格式化
 
-1. 安装时间格式化组件库moment
+1. 安装时间格式化组件库 moment
 
 ```JavaScript
 npm i moment --save
 ```
 
-2. 在main.js中定义全局过滤器进行时间格式化
+2. 在 main.js 中定义全局过滤器进行时间格式化
 
 ```JavaScript
 // 导入时间格式化组件库moment
@@ -521,13 +521,13 @@ import NewsInfo from '../components/news/NewsInfo.vue'
 { path: '/home/newsinfo/:id', component: NewsInfo }
 ```
 
-3. 修改新闻列表中的a标签为`router-link`,并设置to属性的值为跳转路径
+3. 修改新闻列表中的 a 标签为`router-link`,并设置 to 属性的值为跳转路径
 
 ```HTML
 <router-link :to="'/home/newsinfo/' + item.id">
 ```
 
-4. 在`NewsInfo.vue`组件data中定义属性id,用于接收路由传递的参数
+4. 在`NewsInfo.vue`组件 data 中定义属性 id,用于接收路由传递的参数
 
 ```JavaScript
 export default {
@@ -543,7 +543,7 @@ export default {
 
 > [深度作用选择器](https://vue-loader.vuejs.org/zh-cn/features/scoped-css.html)
 
-1. HTML结构布局
+1. HTML 结构布局
 
 ```HTML
 <div class="newsinfo-container">
@@ -560,7 +560,7 @@ export default {
 </div>
 ```
 
-2. CSS样式
+2. CSS 样式
 
 ```SCSS
 .newsinfo-container {
@@ -584,6 +584,7 @@ export default {
   }
 }
 ```
+
 3. 请求数据
 
 ```JavaScript
@@ -638,7 +639,7 @@ components:{
 
 ## 获取评论子组件真实数据
 
-1. 使用父子组件传值将数据id传到子组件中
+1. 使用父子组件传值将数据 id 传到子组件中
 
 ```JavaScript
 // 1 NewsInfo.vue中使用comment组件时绑定id属性传值
@@ -648,7 +649,7 @@ components:{
 props: ["id"]
 ```
 
-2. 使用vue-resource发起数据请求
+2. 使用 vue-resource 发起数据请求
 
 ```JavaScript
 import { Toast } from "mint-ui";
@@ -680,7 +681,7 @@ export default {
 };
 ```
 
-3. 使用vue指令在HTML结构中绑定数据
+3. 使用 vue 指令在 HTML 结构中绑定数据
 
 ## 完成评论组件点击加载更多功能
 
@@ -690,7 +691,7 @@ export default {
 <mt-button type="danger" size="large" plain @click="getMore">加载更多</mt-button>
 ```
 
-2. 自增pageIndx,然后重新发送数据请求
+2. 自增 pageIndx,然后重新发送数据请求
 
 ```JavaScript
 getMore() {
@@ -715,7 +716,8 @@ this.comments = this.comments.concat(result.body.message);
 
 <mt-button type="primary" size="large"  @click="postComment">发表评论</mt-button>
 ```
-2. `main.js`中全局设置vue-resource post数据请求格式
+
+2. `main.js`中全局设置 vue-resource post 数据请求格式
 
 ```JavaScript
 // 2.4 全局设置 post 时候表单数据格式组织形式   application/x-www-form-urlencoded
@@ -747,11 +749,11 @@ postComment() {
       }
     });
 }
-``` 
+```
 
 ## 完成图片列表顶部导航布局
 
-1. 修改`HomeContainer.vue`图片分享按钮的a标签为`router-link`并设置to属性为'/home/photolist'
+1. 修改`HomeContainer.vue`图片分享按钮的 a 标签为`router-link`并设置 to 属性为'/home/photolist'
 
 ```HTML
 <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -770,7 +772,7 @@ import PhotoList from '../components/photos/PhotoList.vue'
 { path: '/home/photolist', component: PhotoList }
 ```
 
-3. 在`PhotoList.vue`中引用MUI中的'tab-top-webview-main.html'中的顶部代码,并去掉`mui-fullscreen`样式类
+3. 在`PhotoList.vue`中引用 MUI 中的'tab-top-webview-main.html'中的顶部代码,并去掉`mui-fullscreen`样式类
 
 ```HTML
 <div id="slider" class="mui-slider">
@@ -796,9 +798,9 @@ import PhotoList from '../components/photos/PhotoList.vue'
 </div>
 ```
 
-## 解决导入MUIjs文件后产生的问题
+## 解决导入 MUIjs 文件后产生的问题
 
-1. `PhotoList.vue`中导入MUIjs文件,实现顶部导航滚动效果
+1. `PhotoList.vue`中导入 MUIjs 文件,实现顶部导航滚动效果
 
 ```JavaScript
 import mui from "../../lib/mui/js/mui.min.js";
@@ -811,7 +813,7 @@ mounted() {
 }
 ```
 
-2. 安装`babel-plugin-transform-remove-strict-mode`移除webpack打包js后默认加上的严格模式
+2. 安装`babel-plugin-transform-remove-strict-mode`移除 webpack 打包 js 后默认加上的严格模式
 
 > [babel-plugin-transform-remove-strict-mode](https://github.com/genify/babel-plugin-transform-remove-strict-mode)
 
@@ -823,19 +825,19 @@ cnpm i babel-plugin-transform-remove-strict-mode --save-dev
 "transform-remove-strict-mode"
 ```
 
-3. 加入样式消除chrome控制台警告
+3. 加入样式消除 chrome 控制台警告
 
-> 原因：（是chrome为了提高页面的滑动流畅度而新折腾出来的一个东西） 
+> 原因：（是 chrome 为了提高页面的滑动流畅度而新折腾出来的一个东西）
 
 > http://www.cnblogs.com/pearl07/p/6589114.html
 
->https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action
+> https://developer.mozilla.org/zh-CN/docs/Web/CSS/touch-action
 
 ```CSS
 * { touch-action: pan-y; }
 ```
 
-4. 修改tabbar样式类名,解决tabbar不能点击问题
+4. 修改 tabbar 样式类名,解决 tabbar 不能点击问题
 
 ```CSS
 /* 1. 将tabbar中的mui-tab-item改为mui-tab-item-llb */
@@ -913,16 +915,18 @@ cnpm i babel-plugin-transform-remove-strict-mode --save-dev
     </div>
 </div>
 ```
+
 ## 渲染图片列表并实现懒加载图片
 
-> 如果使用mint-ui中的懒加载指令实现图片懒加载效果,需要全局注册mint-ui,即
+> 如果使用 mint-ui 中的懒加载指令实现图片懒加载效果,需要全局注册 mint-ui,即
+
 ```JavaScript
 import MintUi from 'mint-ui'
 Vue.use(MintUi)
 import 'mint-ui/lib/style.css'
 ```
 
-1. 使用mint-ui中的v-lazy搭建页面结构
+1. 使用 mint-ui 中的 v-lazy 搭建页面结构
 
 ```HTML
 <ul class="photo-list">
@@ -992,10 +996,10 @@ getPhotoListByCateId(cateId) {
 
 ## 实现图片详情的页面跳转和数据加载及评论子组件集成
 
-1. 更改`PhotoList.vue`中的li标签为`router-link`,并设置to属性
+1. 更改`PhotoList.vue`中的 li 标签为`router-link`,并设置 to 属性
 
 ```HTML
-<router-link v-for="item in list" :key="item.id" :to="'/home/photoinfo/' + item.id" tag="li"> 
+<router-link v-for="item in list" :key="item.id" :to="'/home/photoinfo/' + item.id" tag="li">
 </router-link>
 ```
 
@@ -1081,7 +1085,7 @@ components: {
 
 > [vue-preview](https://www.npmjs.com/package/vue-preview)
 
-1. 安装vue-preview插件,在main.js中导入并注册
+1. 安装 vue-preview 插件,在 main.js 中导入并注册
 
 ```JavaScript
 cnpm i vue-preview --save
@@ -1098,6 +1102,7 @@ Vue.use(VuePreview)
   <img class="preview-img" v-for="(item, index) in list" :src="item.src" height="100" @click="$preview.open(index, list)" :key="index">
 </div>
 ```
+
 ```CSS
 .thumbs {
   img {
@@ -1168,7 +1173,7 @@ import GoodsList from '../components/goods/GoodsList.vue'
 </div>
 ```
 
-4. 书写CSS
+4. 书写 CSS
 
 ```SCSS
 <style lang="scss" scoped>
@@ -1225,7 +1230,7 @@ import GoodsList from '../components/goods/GoodsList.vue'
 
 ## 商品列表真实数据获取及上拉加载更多下拉刷新
 
-1. 使用mint-ui的`mt-loadmore`组件包裹列表
+1. 使用 mint-ui 的`mt-loadmore`组件包裹列表
 
 ```HTML
 <mt-loadmore :autoFill='false' :top-method="loadTop" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
@@ -1297,14 +1302,14 @@ loadBottom() {
 
 ## 编程式导航跳转商品详情页面
 
-1. 给需要点击跳转的div注册事件
+1. 给需要点击跳转的 div 注册事件
 
 ```HTML
 <div class="goods-item" v-for="(item,index) in goodslist" :key="index" @click="goDetail(item.id)">
 </div>
 ```
 
-2. 使用vue-router提供的编程式导航跳转
+2. 使用 vue-router 提供的编程式导航跳转
 
 ```JavaScript
 goDetail(id) {
@@ -1317,7 +1322,7 @@ goDetail(id) {
 }
 ```
 
-3. 使用MUI提供的卡片视图代码段布局
+3. 使用 MUI 提供的卡片视图代码段布局
 
 ```HTML
 <div class="goodsinfo-container">
@@ -1352,6 +1357,7 @@ goDetail(id) {
     </div>
 </div>
 ```
+
 ```CSS
 .goodsinfo-container {
   background-color: #eee;
@@ -1366,9 +1372,10 @@ goDetail(id) {
 ```JavaScript
 <template>
   <div>
+  <mt-swipe-item>
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="(item,index) in lunbotuList" :key="index">
-        <img :src="item.img" alt="">
+        <img :src="item.src" alt="">
       </mt-swipe-item>
     </mt-swipe>
   </div>
@@ -1395,10 +1402,9 @@ export default {
   }
 }
 </style>
-
 ```
 
-2. 将首页的轮播图代码替换成封装好的swiper组件使用
+2. 将首页的轮播图代码替换成封装好的 swiper 组件使用
 
 ```JavaScript
 // 1. 导入swiper组件
@@ -1411,7 +1417,7 @@ components:{
 <swiper :lunbotu-list = 'imageList'></swiper>
 ```
 
-3. 在商品详情页面集成swiper组件
+3. 在商品详情页面集成 swiper 组件
 
 ```HTML
 <!-- 商品轮播图区域 -->
@@ -1456,13 +1462,13 @@ components: {
 
 ## 解决轮播图宽度问题
 
-1. 给轮播图组件定义一个属性控制图片的宽度是否应该设置100%,该属性由父组件传递进来
+1. 给轮播图组件定义一个属性控制图片的宽度是否应该设置 100%,该属性由父组件传递进来
 
 ```JavaScript
 props: ["lunbotuList","isfull"]
-``` 
+```
 
-2. 通过该属性控制是否给img添加样式类`full`
+2. 通过该属性控制是否给 img 添加样式类`full`
 
 ```HTML
 <img :src="item.img" alt="" :class="{'full': isfull}">
@@ -1474,7 +1480,7 @@ props: ["lunbotuList","isfull"]
 }
 ```
 
-3. 首页和商品详情页面使用swiper组件时传递不同的值
+3. 首页和商品详情页面使用 swiper 组件时传递不同的值
 
 ```HTML
 <!-- 首页 -->
@@ -1482,7 +1488,6 @@ props: ["lunbotuList","isfull"]
 
 <!-- 商品详情 -->
 <swiper :lunbotu-list="lunbotu" :isfull="false"></swiper>
-
 ```
 
 ## 商品购买区域结构样式
@@ -1507,7 +1512,7 @@ props: ["lunbotuList","isfull"]
 </div>
 ```
 
-2. 定义购买数量numbox组件
+2. 定义购买数量 numbox 组件
 
 ```JavaScript
 <template>
@@ -1533,7 +1538,6 @@ export default {
 <style lang="scss" scoped>
 
 </style>
-
 ```
 
 3. `GoodsInfo.vue`中集成组件
@@ -1687,7 +1691,6 @@ enter(el, done) {
 afterEnter(el) {
   this.ballFlag = !this.ballFlag;
 }
-
 ```
 
 3. 加入购物车按钮绑定事件
@@ -1701,13 +1704,13 @@ addToShopCar() {
 
 ## 优化小球动画结束位置
 
-1. 给App.vue中的徽章添加id
+1. 给 App.vue 中的徽章添加 id
 
 ```HTML
 <span class="mui-badge" id="badge">0</span>
 ```
 
-2. 给小球添加ref属性
+2. 给小球添加 ref 属性
 
 ```HTML
 <div class="ball" v-show="ballFlag" ref="ball"></div>
@@ -1732,7 +1735,7 @@ el.style.transition = "all 0.5s cubic-bezier(.4,-0.3,1,.68)";
 
 ## 子组件向父组件传递购买数量值
 
-1. 子组件中改变数量时使用this.$emit发布事件
+1. 子组件中改变数量时使用 this.$emit 发布事件
 
 ```JavaScript
 methods: {
@@ -1771,7 +1774,7 @@ getSelectedCount(count) {
 props: ["max"]
 ```
 
-2. 子组件使用watch监视max的变化并使用MUI的jsAPI设置最大值
+2. 子组件使用 watch 监视 max 的变化并使用 MUI 的 jsAPI 设置最大值
 
 ```JavaScript
 watch: {
@@ -1785,15 +1788,15 @@ watch: {
 }
 ```
 
-## 集成Vuex
+## 集成 Vuex
 
-1. 安装Vuex
+1. 安装 Vuex
 
 ```JavaScript
 cnpm i vuex --save
 ```
 
-2. `main.js`中实例化vuex
+2. `main.js`中实例化 vuex
 
 ```JavaScript
 // 注册 vuex
@@ -1813,7 +1816,7 @@ var store = new Vuex.Store({
 })
 ```
 
-3. 将store实例挂载到vue实例上
+3. 将 store 实例挂载到 vue 实例上
 
 ```JavaScript
 new Vue({
@@ -1824,18 +1827,18 @@ new Vue({
 })
 ```
 
-## 使用vuex实现加入购物车保存数据
+## 使用 vuex 实现加入购物车保存数据
 
-1. 在state中定义数组car用于保存数据
+1. 在 state 中定义数组 car 用于保存数据
 
 ```JavaScript
 state: { // this.$store.state.***
-  car: [] // 将 购物车中的商品的数据，用一个数组存储起来，在 car 数组中，存储一些商品的对象， 咱们可以暂时将这个商品对象，设计成这个样子   
+  car: [] // 将 购物车中的商品的数据，用一个数组存储起来，在 car 数组中，存储一些商品的对象， 咱们可以暂时将这个商品对象，设计成这个样子
   // { id:商品的id, count: 要购买的数量, price: 商品的单价，selected: false  }
 },
 ```
 
-2. 在mutations中定义方法实现加入购物车改变数据
+2. 在 mutations 中定义方法实现加入购物车改变数据
 
 ```JavaScript
 addToCar(state, goodsinfo) {
@@ -1860,7 +1863,7 @@ addToCar(state, goodsinfo) {
 }
 ```
 
-3. 在`GoodsInfo.vue`中点击加入购物车时,拼装数据触发store中改变数据的方法
+3. 在`GoodsInfo.vue`中点击加入购物车时,拼装数据触发 store 中改变数据的方法
 
 ```JavaScript
 var goodsinfo = {
@@ -1873,9 +1876,9 @@ var goodsinfo = {
 this.$store.commit("addToCar", goodsinfo);
 ```
 
-## getters实现加入购物车徽章变化
+## getters 实现加入购物车徽章变化
 
-1. store中定义getters计算购物车总数量
+1. store 中定义 getters 计算购物车总数量
 
 ```JavaScript
 getters:{
@@ -1889,7 +1892,7 @@ getters:{
 }
 ```
 
-2. 使用this.$store.getters.getAllCount显示数据
+2. 使用 this.$store.getters.getAllCount 显示数据
 
 ```HTML
 <span class="mui-badge" id="badge">{{this.$store.getters.getAllCount}}</span>
@@ -1897,17 +1900,17 @@ getters:{
 
 ## 实现购物车数据的本地持久化存储
 
-1. 进入网站先从本地localstorage中获取数据并设置给state中的car
+1. 进入网站先从本地 localstorage 中获取数据并设置给 state 中的 car
 
 ```JavaScript
 var car = JSON.parse(localStorage.getItem('car') || '[]')
 
-state: { 
+state: {
     car: car
 }
 ```
 
-2. 改变数据时将数据存储到localstorage
+2. 改变数据时将数据存储到 localstorage
 
 ```JavaScript
 // 当 更新 car 之后，把 car 数组，存储到 本地的 localStorage 中
@@ -1916,7 +1919,7 @@ localStorage.setItem('car', JSON.stringify(state.car))
 
 ## 购物车列表界面布局
 
-1. HTML结构
+1. HTML 结构
 
 ```HTML
 <div class="shopcar-container">
@@ -1997,6 +2000,7 @@ localStorage.setItem('car', JSON.stringify(state.car))
 ## 获取商品数据并渲染到界面
 
 1. 获取商品数据
+
 ```JavaScript
 created(){
     this.getGoodsList()
@@ -2026,7 +2030,7 @@ methods: {
 
 ## 购物车列表中初始化数量值
 
-1. getters中定义方法创造出需要使用的数据结构
+1. getters 中定义方法创造出需要使用的数据结构
 
 ```JavaScript
 // 将[{"id":"87","count":3,"price":2195,"selected":true},{"id":89,"count":4,"price":2199,"selected":true}] 变成 {87:3,89:4}
@@ -2039,22 +2043,22 @@ getGoodsCount(state) {
 }
 ```
 
-2. 使用numbox时传递数量值
+2. 使用 numbox 时传递数量值
 
 ```JavaScript
 <numbox :initcount="$store.getters.getGoodsCount[item.id]"></numbox>
 ```
 
-3. 在numbox组件内部获取initcount使用
+3. 在 numbox 组件内部获取 initcount 使用
 
 ```JavaScript
 props:["initcount"]
 <input id="test" class="mui-input-numbox" type="number" :value="initcount" @change="countChanged" ref="numbox" />
 ```
 
-## 实现购物车商品数量改变同步到store中
+## 实现购物车商品数量改变同步到 store 中
 
-1. 在mutations中定义用于同步数量的方法
+1. 在 mutations 中定义用于同步数量的方法
 
 ```JavaScript
 updateGoodsInfo(state, goodsinfo) {
@@ -2070,7 +2074,7 @@ updateGoodsInfo(state, goodsinfo) {
 }
 ```
 
-2. 将商品id使用父子组件传值传递到numbox
+2. 将商品 id 使用父子组件传值传递到 numbox
 
 ```JavaScript
 <numbox :initcount="$store.getters.getGoodsCount[item.id]" :goodsid="item.id"></numbox>
@@ -2092,7 +2096,7 @@ countChanged() {
 
 ## 实现购物车商品数据的删除
 
-1. 在mutations中定义删除store中数据的方法
+1. 在 mutations 中定义删除 store 中数据的方法
 
 ```JavaScript
 removeFormCar(state, id) {
@@ -2108,7 +2112,7 @@ removeFormCar(state, id) {
 }
 ```
 
-2. 给a标签注册删除事件
+2. 给 a 标签注册删除事件
 
 ```HTML
 <!-- 根据id删除store中的数据 根据index删除goodslist中的数据 -->
@@ -2127,7 +2131,7 @@ remove(id, index) {
 
 ## 实现勾选数量和总价的自动计算
 
-1. 把store中的选中状态同步到页面
+1. 把 store 中的选中状态同步到页面
 
 ```JavaScript
 // 1. getters中定义 计算选中的商品 的方法
@@ -2139,11 +2143,11 @@ getGoodsSelected(state) {
     return o
 }
 // 2. mt-switch组件上绑定选中状态
-<mt-switch 
+<mt-switch
 v-model="$store.getters.getGoodsSelected[item.id]"></mt-switch>
 ```
 
-2. 将页面选中状态同步到store中保存
+2. 将页面选中状态同步到 store 中保存
 
 ```JavaScript
 // 1. mutations中定义更新选中状态的方法
@@ -2158,7 +2162,7 @@ updateGoodsSelected(state, info) {
 }
 
 // 2. mt-switch绑定点击事件
-<mt-switch 
+<mt-switch
 v-model="$store.getters.getGoodsSelected[item.id]"
 @change="selectedChanged(item.id, $store.getters.getGoodsSelected[item.id])"></mt-switch>
 
@@ -2169,7 +2173,7 @@ selectedChanged(id, val) {
 }
 ```
 
-3. getters中定义计算勾选商品件数和总价格的方法
+3. getters 中定义计算勾选商品件数和总价格的方法
 
 ```JavaScript
 getGoodsCountAndAmount(state) {
@@ -2187,7 +2191,7 @@ getGoodsCountAndAmount(state) {
 }
 ```
 
-4. 使用getters中的方法显示数据
+4. 使用 getters 中的方法显示数据
 
 ```HTML
 <p>已勾选商品 <span class="red">{{ $store.getters.getGoodsCountAndAmount.count }}</span> 件， 总价 <span class="red">￥{{ $store.getters.getGoodsCountAndAmount.amount }}</span></p>
@@ -2195,7 +2199,7 @@ getGoodsCountAndAmount(state) {
 
 ## 实现项目的返回按钮功能
 
-1. 使用mint-ui的返回按钮组件
+1. 使用 mint-ui 的返回按钮组件
 
 ```HTML
 <mt-header fixed title='黑马程序员.Vue项目'>
@@ -2205,7 +2209,7 @@ getGoodsCountAndAmount(state) {
 </mt-header>
 ```
 
-2. 使用vue-router提供的`this.$router.go(-1)`方法实现返回
+2. 使用 vue-router 提供的`this.$router.go(-1)`方法实现返回
 
 ```JavaScript
 export default {

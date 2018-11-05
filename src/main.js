@@ -8,6 +8,9 @@ Vue.use(MintUI)
 // 导入mui
 import '../lib/mui/css/mui.min.css'
 import '../lib/mui/css/icons-extra.css'
+//图片缩略图
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 // 导入axios--已经封装单独api了，所以隐藏
 // import axios from 'axios'
