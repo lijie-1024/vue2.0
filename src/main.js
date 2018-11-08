@@ -12,6 +12,10 @@ import '../lib/mui/css/icons-extra.css'
 import VuePreview from 'vue-preview'
 Vue.use(VuePreview)
 
+// 导入vuex
+import store from '@/store/index.js'
+
+
 // 导入axios--已经封装单独api了，所以隐藏
 // import axios from 'axios'
 // 把 axios 挂载 到 Vue 上b
@@ -31,5 +35,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
